@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113483EE1EFC632600606F29 /* square-shade.png in Resources */ = {isa = PBXBuildFile; fileRef = 113483ED1EFC632000606F29 /* square-shade.png */; };
+		113483EF1EFC632600606F29 /* square-shade.png in Resources */ = {isa = PBXBuildFile; fileRef = 113483ED1EFC632000606F29 /* square-shade.png */; };
 		133564161B59C3F500A4E4BF /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 133564101B59C3F500A4E4BF /* UIImage+Compare.h */; };
 		133564171B59C3F500A4E4BF /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 133564111B59C3F500A4E4BF /* UIImage+Compare.m */; };
 		133564181B59C3F500A4E4BF /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 133564121B59C3F500A4E4BF /* UIImage+Diff.h */; };
@@ -71,8 +73,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113483ED1EFC632000606F29 /* square-shade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-shade.png"; sourceTree = "<group>"; };
 		133564101B59C3F500A4E4BF /* UIImage+Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compare.h"; sourceTree = "<group>"; };
-		133564111B59C3F500A4E4BF /* UIImage+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compare.m"; sourceTree = "<group>"; };
+		133564111B59C3F500A4E4BF /* UIImage+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compare.m"; sourceTree = "<group>"; usesTabs = 0; };
 		133564121B59C3F500A4E4BF /* UIImage+Diff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Diff.h"; sourceTree = "<group>"; };
 		133564131B59C3F500A4E4BF /* UIImage+Diff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Diff.m"; sourceTree = "<group>"; };
 		133564141B59C3F500A4E4BF /* UIImage+Snapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Snapshot.h"; sourceTree = "<group>"; };
@@ -203,6 +206,7 @@
 				E5C2CD611B1F399A00669887 /* square_with_pixel.png */,
 				B32447D91AB78B5E00B1D6FF /* square_with_text.png */,
 				B32447DA1AB78B5E00B1D6FF /* square-copy.png */,
+				113483ED1EFC632000606F29 /* square-shade.png */,
 				B32447DB1AB78B5E00B1D6FF /* square.png */,
 				B31988301AB784CB00B0A900 /* FBSnapshotControllerTests.m */,
 				B31988001AB782D100B0A900 /* Supporting Files */,
@@ -388,6 +392,7 @@
 				827137A01C63AC0700354E42 /* square_with_pixel.png in Resources */,
 				827137A21C63AC0D00354E42 /* square-copy.png in Resources */,
 				827137A31C63AC0D00354E42 /* square.png in Resources */,
+				113483EE1EFC632600606F29 /* square-shade.png in Resources */,
 				827137A11C63AC0900354E42 /* square_with_text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +412,7 @@
 				B32447DC1AB78B5E00B1D6FF /* square_with_text.png in Resources */,
 				E5C2CD621B1F399A00669887 /* square_with_pixel.png in Resources */,
 				B32447DE1AB78B5E00B1D6FF /* square.png in Resources */,
+				113483EF1EFC632600606F29 /* square-shade.png in Resources */,
 				B32447DD1AB78B5E00B1D6FF /* square-copy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

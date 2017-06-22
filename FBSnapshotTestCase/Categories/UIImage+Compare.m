@@ -106,14 +106,18 @@ typedef union {
     FBComparePixel *p1 = referenceImagePixels;
     FBComparePixel *p2 = imagePixels;
 
-    NSInteger numDiffPixels = 0;
+    CGFloat numDiffPixels = 0;
     for (int n = 0; n < pixelCount; ++n) {
       // If this pixel is different, increment the pixel diff count and see
       // if we have hit our limit.
       if (p1->raw != p2->raw) {
-        numDiffPixels ++;
-
-        CGFloat percent = (CGFloat)numDiffPixels / pixelCount;
+        double diff = ((CGFloat)abs(p1->pixels.red - p2->pixels.red) / CHAR_MAX +
+                       (CGFloat)abs(p1->pixels.green - p2->pixels.green) / CHAR_MAX +
+                       (CGFloat)abs(p1->pixels.blue - p2->pixels.blue) / CHAR_MAX +
+                       (CGFloat)abs(p1->pixels.alpha - p2->pixels.alpha) / CHAR_MAX) / 4.0;
+        numDiffPixels += diff;
+        
+        CGFloat percent = numDiffPixels / (CGFloat)pixelCount;
         if (percent > tolerance) {
           imageEqual = NO;
           break;

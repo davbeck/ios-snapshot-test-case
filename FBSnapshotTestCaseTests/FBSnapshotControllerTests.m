@@ -57,7 +57,7 @@
     FBSnapshotTestController *controller = [[FBSnapshotTestController alloc] initWithTestClass:nil];
     // With virtually no margin for error, this should fail to be equal
     NSError *error = nil;
-    XCTAssertFalse([controller compareReferenceImage:referenceImage toImage:testImage tolerance:0.0001 error:&error]);
+    XCTAssertFalse([controller compareReferenceImage:referenceImage toImage:testImage tolerance:0.000001 error:&error]);
     XCTAssertNotNil(error);
     XCTAssertEqual(error.code, FBSnapshotTestControllerErrorCodeImagesDifferent);
 }
@@ -74,6 +74,35 @@
     NSError *error = nil;
     XCTAssertTrue([controller compareReferenceImage:referenceImage toImage:testImage tolerance:.001 error:&error]);
     XCTAssertNil(error);
+}
+
+- (void)testCompareShadedImageWithVeryLowToleranceShouldNotMatch
+{
+	UIImage *referenceImage = [self _bundledImageNamed:@"square" type:@"png"];
+	XCTAssertNotNil(referenceImage);
+	UIImage *testImage = [self _bundledImageNamed:@"square-shade" type:@"png"];
+	XCTAssertNotNil(testImage);
+	
+	FBSnapshotTestController *controller = [[FBSnapshotTestController alloc] initWithTestClass:nil];
+	// With some tolerance these should be considered the same
+	NSError *error = nil;
+	XCTAssertFalse([controller compareReferenceImage:referenceImage toImage:testImage tolerance:0.0001 error:&error]);
+	XCTAssertNotNil(error);
+	XCTAssertEqual(error.code, FBSnapshotTestControllerErrorCodeImagesDifferent);
+}
+
+- (void)testCompareShadedImageWithLowToleranceShouldMatch
+{
+	UIImage *referenceImage = [self _bundledImageNamed:@"square" type:@"png"];
+	XCTAssertNotNil(referenceImage);
+	UIImage *testImage = [self _bundledImageNamed:@"square-shade" type:@"png"];
+	XCTAssertNotNil(testImage);
+	
+	FBSnapshotTestController *controller = [[FBSnapshotTestController alloc] initWithTestClass:nil];
+	// With some tolerance these should be considered the same
+	NSError *error = nil;
+	XCTAssertTrue([controller compareReferenceImage:referenceImage toImage:testImage tolerance:.1 error:&error]);
+	XCTAssertNil(error);
 }
 
 - (void)testCompareReferenceImageWithDifferentSizes
