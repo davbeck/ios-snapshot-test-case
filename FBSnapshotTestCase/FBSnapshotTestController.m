@@ -228,7 +228,9 @@ typedef NS_ENUM(NSUInteger, FBTestSnapshotFileNameType) {
       fileName = @"";
       break;
   }
-  fileName = [fileName stringByAppendingString:NSStringFromSelector(selector)];
+  // Swift throwing functions add this on the end of method names
+  NSString *selectorName = [NSStringFromSelector(selector) stringByReplacingOccurrencesOfString:@"AndReturnError:" withString:@""];
+  fileName = [fileName stringByAppendingString:selectorName];
   if (0 < identifier.length) {
     fileName = [fileName stringByAppendingFormat:@"_%@", identifier];
   }
